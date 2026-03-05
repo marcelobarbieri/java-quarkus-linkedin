@@ -1,5 +1,7 @@
 package com.barbieri.lq.example;
 
+import jakarta.enterprise.context.ApplicationScoped;
+
 @ApplicationScoped
 public class GreetingConfig {
 
