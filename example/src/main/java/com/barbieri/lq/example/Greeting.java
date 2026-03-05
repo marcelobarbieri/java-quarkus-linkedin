@@ -7,9 +7,17 @@ import jakarta.ws.rs.core.MediaType;
 
 @Path("/greeting")
 public class Greeting {
+
+    GreetingConfig config;
+
+    @Inject
+    public Greeting(GreetingConfig config) {
+        this.config = config;
+    }
+
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String getGreeting() {
-        return "Hello, World!";
+        return "Hello " + config.getReceipient();
     }
 }
